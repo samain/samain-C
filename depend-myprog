@@ -1,0 +1,7 @@
+multimedia.o: multimedia.cpp multimedia.h intrusive_ptr.h
+photo.o: photo.cpp photo.h multimedia.h intrusive_ptr.h
+video.o: video.cpp video.h multimedia.h intrusive_ptr.h
+group.o: group.cpp group.h multimedia.h intrusive_ptr.h
+film.o: film.cpp film.h video.h multimedia.h intrusive_ptr.h
+main.o: main.cpp multimedia.h intrusive_ptr.h photo.h video.h film.h \
+ group.h

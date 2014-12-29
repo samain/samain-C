@@ -1,0 +1,38 @@
+Compte-rendu du TP de C++ de Sébastien Samain.
+
+5ème étape : 
+
+La propriété de l'orienté objet permettant de traiter de la même manière tous les éléments
+dérivés d'une même classe s'appelle le polymorphisme.
+
+Pour que le traitement voulu soit effectif en C++, il faut que les méthodes appelées soient déclarées avec le 
+mot clé virtual, de manière à ce que la méthode de la sous-classe soit exécutée à la place de la méthode de la 
+classe mère.
+
+Les éléments du tableau créé sont des pointeurs vers des objets de type Multimedia. En Java, les types non primitifs sont
+sont des références, analogues aux pointeurs.
+
+
+6ème étape : 
+
+Pour être sur que la gestion de la mémoire soit valide, il faut, dans le destructeur de chaque objet, faire appel à la méthode delete sur
+tout les pointeurs définis dans la classe, de manière à éviter les fuites de mémoires, puis affecter chacun de ces pointeurs à NULL, de manière à éviter les pointeurs pendants.
+
+
+7ème étape : 
+
+La seule classe concernée par les fuites de mémoire parmi celles précédemment écrites est la classe Film. Il faut modifier le destructeur de la classe Film, seule classe ayant un tableau commme attribut, pour que les données du tableau y soit détruites, puis que le pointeur du tableau soit affecté à NULL.
+
+La seule classe concernéé par les problèmes de copies de tableau parmi les classes précédemment écrites est la classe Film. Il faut créer un constructeur prenanat en paramètre l'objet cloné , et dans ce constructeur recopier un à un les éléments du tableau chapterDurations de l'objet copié dans un nouveau tableau créé avec la fonction malloc, de manière à ce qu'il n'y ait pas de pointeur pointant sur une zone de donnée inexistante après la destruction de l'objet copié.
+
+8ème étape : 
+
+Pour pouvoir utiliser le polymorphisme, la méthode doit etre déclarée commme suit dans ma classe de base : 
+
+virtual void play();
+
+La non-implémentation de cette méthode au niveau de la classe de base aura pour effet de rendre cette dernière abstraite, donc rendra toute implémentation directe d'objets de cette classe impossible.
+
+9ème étape : 
+
+
